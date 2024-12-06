@@ -1,0 +1,3 @@
+- [X] createdAT should be logging based on IST
+- [X] doing refactoring
+- [ ] adding tests 
