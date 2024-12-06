@@ -43,7 +43,7 @@ func cleanInput(text string) []string {
 type cliCommand struct {
 	name        string
 	description string
-	callback    func() error
+	callback    func() ( error)
 }
 
 func getCommands() map[string]cliCommand {

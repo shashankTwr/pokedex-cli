@@ -1,18 +1,23 @@
 package main
 
 import (
+	"time"
+
 	"github.com/shashankTwr/pokedexcli/internal/pokeapi"
+	"github.com/shashankTwr/pokedexcli/internal/pokecache"
 )
+const baseURL = "https://pokeapi.co/api/v2/location-area/"
 
 
-func commandMap() error {
-    return pokeapi.GetNextLocations()
+var Cfg *pokeapi.Config = &pokeapi.Config{
+	Count: 0,
+    Next: "",
+    Previous: "",
+    Results: nil,
 }
 
-func commandMapB() error {
-    return pokeapi.GetPreviousLocations()
-}
-
+const interval = 5 * time.Second
+var Cache *pokecache.Cache = pokecache.NewCache(interval)
 func main(){
 	startRepl()
 }
